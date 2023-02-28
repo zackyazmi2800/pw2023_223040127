@@ -10,8 +10,8 @@
 		}
 
 		.kotak{
-			width: 100px;
-			height: 100px; 
+			width: 50px;
+			height: 50px; 
 			background-color: red;
 			text-align: center;
 			line-height: 100px;
