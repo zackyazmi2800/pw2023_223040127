@@ -14,7 +14,7 @@
 			height: 50px; 
 			background-color: red;
 			text-align: center;
-			line-height: 100px;
+			line-height: 50px;
 			display: inline-block;
             margin-right: -5px;
             border: 1px solid black;
@@ -22,44 +22,11 @@
 	</style>
 </head>
 <body>
-    <?php for ($i=1; $i <= 10; $i++) : ?>
-        <div class="kotak"><?= $i; ?></div>
-    <?php endfor;?>
-    <br>
-    <?php for ($i=1; $i <= 9; $i++) : ?>
-        <div class="kotak"><?= $i; ?></div>
-    <?php endfor;?>
-    <br>
-    <?php for ($i=1; $i <= 8; $i++) : ?>
-        <div class="kotak"><?= $i; ?></div>
-    <?php endfor;?>
-    <br>
-    <?php for ($i=1; $i <= 7; $i++) : ?>
-        <div class="kotak"><?= $i; ?></div>
-    <?php endfor;?>
-    <br>
-    <?php for ($i=1; $i <= 6; $i++) : ?>
-        <div class="kotak"><?= $i; ?></div>
-    <?php endfor;?>
-    <br>
-    <?php for ($i=1; $i <= 5; $i++) : ?>
-        <div class="kotak"><?= $i; ?></div>
-    <?php endfor;?>
-    <br>
-    <?php for ($i=1; $i <= 4; $i++) : ?>
-        <div class="kotak"><?= $i; ?></div>
-    <?php endfor;?>
-    <br>
-    <?php for ($i=1; $i <= 3; $i++) : ?>
-        <div class="kotak"><?= $i; ?></div>
-    <?php endfor;?>
-    <br>
-    <?php for ($i=1; $i <= 2; $i++) : ?>
-        <div class="kotak"><?= $i; ?></div>
-    <?php endfor;?>
-    <br>
-    <?php for ($i=1; $i <= 1; $i++) : ?>
-        <div class="kotak"><?= $i; ?></div>
+    <?php for ($i=10; $i >= 1; $i--) : ?>
+        <?php for ($l=1; $l <= $i; $l++) : ?>
+        <div class="kotak"><?= $l; ?></div>
+        <?php endfor; ?>
+        <br>
     <?php endfor;?>
 </body>
 </html>
