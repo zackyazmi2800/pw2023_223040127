@@ -31,37 +31,19 @@
 	</style>
 </head>
 <body>
-    <?php for ($i=1; $i <= 5 ; $i++) : ?>
-        <?php if ($i % 2 == 1) : ?>
+    <?php for ($i = 1; $i <= 5; $i++) : ?>
+        <?php for ($j = 1; $j <= 5; $j++) :?>
+        <?php if ($i % 2 == 1 && $j % 2 == 1) : ?>
+            <div class="kotak"></div>
+            <?php elseif ($i % 2 == 0 && $j % 2 == 0) : ?>
             <div class="kotak"></div>
             <?php else :?>
-            <div class="kotak1"></div>
-       <?php endif; ?>
-    <?php endfor; ?>
-    <br>
-    <?php for ($i=1; $i <= 5 ; $i++) : ?>
-        <?php if ($i % 2 == 0) : ?>
-            <div class="kotak"></div>
-            <?php else :?>
-            <div class="kotak1"></div>
-       <?php endif; ?>
-    <?php endfor; ?>
-    <br>
-    <?php for ($i=1; $i <= 5 ; $i++) : ?>
-        <?php if ($i % 2 == 1) : ?>
-            <div class="kotak"></div>
-            <?php else :?>
-            <div class="kotak1"></div>
-       <?php endif; ?>
-    <?php endfor; ?>
-    <br>
-    <?php for ($i=1; $i <= 5 ; $i++) : ?>
-        <?php if ($i % 2 == 0) : ?>
-            <div class="kotak"></div>
-            <?php else :?>
-            <div class="kotak1"></div>
-       <?php endif; ?>
-    <?php endfor; ?>
+                <div class="kotak1"></div>
+                <?php endif; ?>
+       <?php endfor; ?>
+       <br>
+<?php endfor; ?>
+       
     <br>
 </body>
 </html>
