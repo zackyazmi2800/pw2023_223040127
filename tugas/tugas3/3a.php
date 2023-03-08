@@ -19,13 +19,13 @@ function luas_keliling($r)
 <body>
     <h4>Menghitung Luas Lingkaran</h4>
     <?php $r=10;?>
-    <?="jari-jari = ".$r."cm"?>
+    <?="jari-jari = ".$r."cm";?>
     <br>
     <?= "Luas lingkaran = ".luas_lingkaran($r). "cm"; ?>
     <hr>
     <h4>Menghitung Keliling Lingkaran</h4>
     <?php $r=20;?>
-    <?="jari-jari = ".$r."cm"?>
+    <?="jari-jari = ".$r."cm";?>
     <br>
     <?= "Luas lingkaran = ".luas_keliling($r). "cm"; ?>
     <hr>
