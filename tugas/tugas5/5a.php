@@ -89,7 +89,7 @@ $mahasiswa =
     </style>
 </head>
 <body>
-    <h2>Daftar $mahasiswa</h2>
+    <h2>Daftar Mahasiswa</h2>
     <?php foreach($mahasiswa as $mhs) {?>
     <ul>
         <li><img src="img/<?= $mhs['foto'];?>"></li>
