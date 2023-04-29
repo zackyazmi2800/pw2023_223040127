@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Halaman Admin</title>
+    <link rel="stylesheet" type="text/css" href="../style/admin.css">
+    <script src="https://kit.fontawesome.com/c45ed65471.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <header>
+        <div class="container">
+          <div class="header-left">
+            <h2>WAKANDA</h2>
+          </div>
+          <div class="header-right">
+            <input type="checkbox" id="nav">
+            <label for="nav">
+              <i class="fa-solid fa-bars fa-2xl" style="color: #ffffff;" id="opennav"></i>
+              <i class="fa-solid fa-xmark fa-beat fa-2xl" style="color: #ffffff;" id="closenav"></i>
+            </label>
+            <ul>
+              <li><a href="index.html">Beranda</a></li>
+              <li><a href="#">Tentang</a></li>
+              <li><a href="admin_pengaduan.html">Pengaduan</a></li>
+              <li><a href="../index.html">Keluar</a></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+
+
+        <div class="content" id="container">
+            <table class="tb">
+                <h1>Pemimpin Wakanda</h1>
+                <form action="" method="post">
+                    <button type="submit" name="tambah" class="btn-sec">Tambah Data Pemimpin</button>
+                </form>
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th class="aksi">Ubah/Hapus</th>
+                        <th>Nama</th>
+                        <th>tentang</th>
+                        <th>Foto</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1. </td>
+                        <td class="aksi">
+                            <a href="#">ubah</a> |
+                            <a href="#">hapus</a>
+                        </td>
+                        <td>Black Panther</td>
+                        <td>Lahir di wakanda pada tanggal 29 November 1976</td>
+                        <td>pemimpin.jpeg</td>
+                    </tr>
+                <tbody>
+            </table>
+            <table class="tb">
+                <thead>
+                <h1>Wakil Pemimpin Wakanda</h1>
+                <form action="" method="post">
+                    <button type="submit" name="tambah" class="btn-sec">Tambah Data Wakil Pemimpin</button>
+                </form>
+                <tr>
+                    <th>No</th>
+                    <th class="aksi">Ubah/Hapus</th>
+                    <th>Nama</th>
+                    <th>tentang</th>
+                    <th>Foto</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1. </td>
+                    <td class="aksi">
+                        <a href="#">ubah</a> |
+                        <a href="#">hapus</a>
+                    </td>
+                    <td>Black Panther</td>
+                    <td>Lahir di wakanda pada tanggal 29 November 1976</td>
+                    <td>pemimpin.jpeg</td>
+                </tr>
+                <tbody>
+            </table>
+        </div>
+
+
+</body>
+
+</html>
