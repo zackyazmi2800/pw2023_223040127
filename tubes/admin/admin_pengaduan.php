@@ -1,37 +1,17 @@
+<?php
+session_start();
+
+if (!isset($_SESSION["login2"])) {
+    header("Location: ../index.php");
+    exit;
+}
+require '../functions.php';
+
+?>
 <!DOCTYPE html>
 <html>
-
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Halaman Admin</title>
-    <link rel="stylesheet" type="text/css" href="../style/admin.css">
-    <script src="https://kit.fontawesome.com/c45ed65471.js" crossorigin="anonymous"></script>
-</head>
-
-<body>
-
-    <header>
-        <div class="container">
-          <div class="header-left">
-            <h2>WAKANDA</h2>
-          </div>
-          <div class="header-right">
-            <input type="checkbox" id="nav">
-            <label for="nav">
-              <i class="fa-solid fa-bars fa-2xl" style="color: #ffffff;" id="opennav"></i>
-              <i class="fa-solid fa-xmark fa-beat fa-2xl" style="color: #ffffff;" id="closenav"></i>
-            </label>
-            <ul>
-              <li><a href="index.html">Beranda</a></li>
-              <li><a href="admin_tentang.html">Tentang</a></li>
-              <li><a href="#">Pengaduan</a></li>
-              <li><a href="../index.html">Keluar</a></li>
-            </ul>
-          </div>
-        </div>
-      </header>
-
+<?php require ('partials/header.php');?>
+<?php require ('partials/nav.php');?>
 
         <div class="content" id="container">
             <table class="tb">

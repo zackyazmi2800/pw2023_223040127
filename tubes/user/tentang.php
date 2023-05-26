@@ -1,3 +1,11 @@
+<?php
+session_start();
+
+if (!isset($_SESSION["login"])) {
+    header("Location: ../index.php");
+    exit;
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,10 +30,10 @@
               <i class="fa-solid fa-xmark fa-beat fa-2xl" style="color: #ffffff;" id="closenav"></i>
             </label>
             <ul>
-              <li><a href="index.html">Beranda</a></li>
+              <li><a href="index.php">Beranda</a></li>
               <li><a href="#">Tentang</a></li>
-              <li><a href="pengaduan.html">Pengaduan</a></li>
-              <li><a href="../index.html">Keluar</a></li>
+              <li><a href="pengaduan.php">Pengaduan</a></li>
+              <li><a href="keluar.php">Keluar</a></li>
             </ul>
           </div>
         </div>
@@ -92,9 +100,9 @@
             </div>
             <div class="footer_content">
               <ul class="footmenu">
-                  <li><a href="index.html">Beranda</a></li>
+                  <li><a href="index.php">Beranda</a></li>
                 <li><a href="#">Tentang Kami</a></li>
-                <li><a href="pengaduan.html">Pengaduan</a></li>
+                <li><a href="pengaduan.php">Pengaduan</a></li>
               </ul>
             </div>
             <div class="footer_content">

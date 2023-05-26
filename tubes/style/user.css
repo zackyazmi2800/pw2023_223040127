@@ -169,7 +169,7 @@
 	.wrapper-galery{
 		margin: auto;
 		margin-bottom: 25px;
-		width: 915px;
+		width: 960px;
 		font: 18px/36px 'BebasNeue', 'Arial Norrow', 'sans-serif';
 		background-color: #ccc;
 		padding: 20px;
@@ -274,56 +274,11 @@
 	}
   
 	/* BERITA */
-	
-  section{
-	  max-width: 1280px;
-	padding: 0px 0px;
-	margin: auto;
-  }
-  .wrapper-berita{
-	  /* padding-top: 20px;  */
-	margin: 0px 0px 20px 0px;
-  }
   .judulberita {
-		  font-size: 50px;
-		margin: 25px 0px 50px 0px;
+		font-size: 50px;
+		margin: 50px 0px 25px 0px;
 		text-align: center;
 		text-shadow: 1px 1px 1px blue;
-  }
-  article{
-	  width: 290px;
-	  margin-left: 20px;
-	  display: inline-block;
-	  vertical-align: top;
-	  border: 1px solid #c8c8c8;
-	  margin-bottom: 10px;
-	  padding: 10px;
-	  border-radius: 3px;
-	  box-shadow: 0 2px 3px #ccc;
-	  background-color: white;
-  }
-  
-  article a img{
-	width: 280px;
-	height: 164px;
-	padding-right: 12px;
-  }
-  
-  .readmore{
-	  background-color: black;
-	  padding: 5px 10px;
-	  color: white;
-	  text-decoration: none;
-	  border-radius: 3px;
-	  display: inline-block;
-  }
-  .readmore:hover{
-	  background-color: #383838;
-  }
-  article p{
-	font-family: Arial, sans-serif;
-	  font-size: 14px;
-	  margin-bottom: 7px;
   }
   
   
@@ -536,6 +491,7 @@
 	justify-content: space-between;
 	color: #fff;
 	padding: 50px 0;
+	margin-top: 20px;
   }
   .footer_content{
 	width: 32%;

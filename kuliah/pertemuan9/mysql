@@ -1,0 +1,7 @@
+create table mahasiswa (
+    id int primary key auto_increment,
+    nim char(9), 
+    nama varchar(250),
+    email varchar(250),
+    jurusan varchar(250)
+);

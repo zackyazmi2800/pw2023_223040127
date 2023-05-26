@@ -211,3 +211,29 @@ table .loc {
 	cursor: pointer;
 	transition: .3s
 }
+
+/* input */
+.content .box-input {
+	padding: 25px 0;
+	width: 90%;
+	margin: auto;
+}
+
+form .form-act {
+	display: flex;
+	justify-content: space-between;
+}
+
+.form-act input {
+	width: 40%;
+	padding: 10px;
+	margin-bottom: 10px;
+	box-sizing: border-box;
+	border: 1px solid #ccc;
+	border-radius: 5px
+}
+
+.button {
+	text-align: right;
+	padding-top: 30px
+}

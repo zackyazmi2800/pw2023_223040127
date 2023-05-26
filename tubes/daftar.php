@@ -1,3 +1,18 @@
+<?php 
+require 'functions.php';
+if (isset($_POST["register"])) {
+    if (registrasi($_POST) > 0) {
+        echo"<script>
+        alert('Username baru berhasil di tambahkan');
+        document.location.href = 'index.php';
+        </script>";
+    }else {
+        echo mysqli_error($conn);
+    }
+}
+?>
+
+
 <!DOCTYPE html>
 <html>
 
@@ -17,14 +32,16 @@
             <div class="box-daftar">
                 <h2 class="title-daftar">Daftar</h2>
                 <label class="label-isi">Silahkan isi data anda</label>
-                <form action="">
+                <form action="" method="POST">
                     <input input type="text" name="nama" id="nama" placeholder="Nama" autocomplete="off" class="input-daftar">
                     <input input type="text" name="username" id="username" placeholder="Username" autocomplete="off" class="input-daftar">
                     <input input type="email" name="email" id="email" placeholder="Email" autocomplete="off" class="input-daftar">
-                    <input type="password" name="password" placeholder="Kata Sandi" class="input-daftar">
-                    <a href="index.html" class="btn">Daftar</a>
+                    <input type="password" name="password" placeholder="Password" class="input-daftar">
+                    <input type="password" name="password2" placeholder="Confirm Password" class="input-daftar">
+                    <input type="hidden" name="level" id="level" value="user">
+                    <button type="submit" name="register" class="btn">Daftar</button>
                 </form>
-                <label class="label-daftar">Apakah Anda Sudah Mempunyai Akun? <a href="index.html">Masuk</a></label>
+                <label class="label-daftar">Apakah Anda Sudah Mempunyai Akun? <a href="index.php">Masuk</a></label>
             </div>
         </div>
     </div>
