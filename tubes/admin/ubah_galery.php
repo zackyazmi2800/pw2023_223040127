@@ -11,7 +11,7 @@ require '../functions.php';
 // ambil data di URL
 $id_gambar = $_GET["id_gambar"];
 
-// query data mahasiswa berdasarkan id
+// query data galery berdasarkan id
 $id_gambar = query("SELECT * FROM galery WHERE id_gambar = $id_gambar")[0];
 
 
