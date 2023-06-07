@@ -1,10 +1,14 @@
 <?php
 session_start();
-
+session_start();
 if (!isset($_SESSION["login"])) {
-    header("Location: ../index.php");
-    exit;
+  header("Location: ../index.php");
+  exit;
 }
+
+$id = $_SESSION['id'];
+$username = $_SESSION['username'];
+$email = $_SESSION['email'];
 ?>
 <!DOCTYPE html>
 <html lang="en">

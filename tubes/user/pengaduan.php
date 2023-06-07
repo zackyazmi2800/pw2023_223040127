@@ -1,12 +1,27 @@
 <?php
 session_start();
-
-if (!isset($_SESSION["login1"])) {
-    header("Location: ../index.php");
-    exit;
+if (!isset($_SESSION["login"])) {
+  header("Location: ../index.php");
+  exit;
 }
 
+$id = $_SESSION['id'];
+$username = $_SESSION['username'];
+$email = $_SESSION['email'];
+
 require '../functions.php';
+
+
+if (isset($_POST["lapor"])) {
+    if (tambah_pengaduan($_POST) > 0) {
+        echo"<script>
+        alert('Laporan telah di kirim');
+        document.location.href = 'pengaduan.php';
+        </script>";
+    }else {
+        echo mysqli_error($conn);
+    }
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -54,13 +69,15 @@ require '../functions.php';
       <!-- pengaduan -->
       <div class="container">
           <div class="wrap-aduan">
-              <form action="POST" class="aduan-form">
+              <form method="POST" class="aduan-form">
                   <div class="aduan-form-box">
                       <div class="aduan-box">Sampaikan Laporan Anda</div>
                   </div>
-                  <div class="aduan-form-category"><input type="text" name="" id="" class="form" placeholder="Ketik Judul Laporan Anda"></div>
-                  <div class="aduan-form-category"><textarea name="" id="" rows="6" class="form" placeholder="Ketik Isi Laporan Anda" style="overflow: hidden; overflow-wrap: break-word; height: 158px;"></textarea></div>
-                  <div class="right"><a href="#" class="btn">LAPOR!</a></div>
+                  <input type="hidden" name="id" value="<?= $id ?>">
+                  <input type="hidden" name="email" value="<?= $email?>">
+                  <div class="aduan-form-category"><input type="text" name="judul_pengaduan" id="judul_pengaduan" class="form" placeholder="Ketik Judul Laporan Anda"></div>
+                  <div class="aduan-form-category"><textarea name="isi_pengaduan" id="isi_pengaduan" rows="6" class="form" placeholder="Ketik Isi Laporan Anda" style="overflow: hidden; overflow-wrap: break-word; height: 158px;"></textarea></div>
+                  <div class="right"><button name="lapor" class="btn">LAPOR!</button></div>
               </form>
           </div>
       </div>

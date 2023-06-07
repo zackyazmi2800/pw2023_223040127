@@ -1,48 +1,95 @@
 <?php
-session_start();
+// session_start();
 require 'functions.php';
 
 
 if (isset($_SESSION["login"])) {
-	header("Location: petugas/index.php");
-	exit;
-}else if (isset($_SESSION["login2"])) {
-	header("Location: admin/index.php");
+	header("Location: user/index.php");
+	exit;}
+if (isset($_SESSION["login2"])) {
+	header("Location: admin/dashboard.php");
 	exit;
 }
+
+
 
 
 if (isset($_POST["login"])) {
 
+	$pesan = '';
+	$redirect = '';
 	$username = $_POST["username"];
 	$password = $_POST["password"];
 
-	$result = mysqli_query($conn, "SELECT * FROM user_admin WHERE username = '$username'");
+	$q = $conn->query("SELECT * FROM user_admin WHERE username = '$username'");
+	$get_data = mysqli_fetch_assoc($q); 
 
 	// Cek username
-	if (mysqli_num_rows($result) === 1) {
+	if (empty($get_data)) {
 		// cek password
-		$row = mysqli_fetch_assoc($result);
-		if (password_verify($password, $row["password"])) {
-			if ($row["level"] == "user") {
-				// set session
-				$_SESSION["login"] = true;
-
-				header("Location: user/index.php");
-				exit;
-			}
-			else if ($row["level"] == "admin") {
-				// set session
-				$_SESSION["login2"] = true;
-
-				header("Location: admin/index.php");
-				exit;
-			}
+		$pesan ='Username belum terdaftar';
+	}else{
+		if (!password_verify($password, $get_data['password'])) {
+		$pesan="Username dan password salah";
+	}elseif ($get_data['level'] == "admin"){
+			session_start();
+			$_SESSION['id'] = $get_data['id'];
+			$_SESSION['username'] = $username;
+			$_SESSION['email'] = $get_data['email'];
+			$pesan = "Selamat Data Admin";
+			$redirect = "admin/index.php";
+			$_SESSION["login2"] = true;
+			$_SESSION["login"] = true;
+			header("Location: admin/dashboard.php");
+			exit;
+		} else {
+			session_start();
+			$_SESSION['id'] = $get_data['id'];
+			$_SESSION['username'] = $username;
+			$_SESSION['email'] = $get_data['email'];
+			$pesan = "Selamat Data";
+			$redirect = "user/index.php";
+			$_SESSION["login"] = true;
+			header("Location: user/index.php");
+			exit;
 		}
-	}
-
-	$error = true;
+	} 
+echo 
+("<script>
+alert ('$pesan');
+window.location.href='$redirect';
+</script>");
+$error = true;
 }
+
+
+
+// if (isset($_POST["login"])) {
+
+//     $username = $_POST["username"];
+//     $password = $_POST["password"];
+
+//     $result = mysqli_query($conn, "SELECT * FROM user_admin WHERE username = '$username'");
+
+//     // Cek username
+//     if (mysqli_num_rows($result) === 1) {
+//         // cek password
+//         $row = mysqli_fetch_assoc($result);
+//         if (password_verify($password, $row["password"])) {
+//             if ($row["level"] == "admin") {
+//                 // set session
+//                 $_SESSION["login2"] = true;
+
+//                 header("Location: admin/index.php");
+//                 exit;
+//             }
+//         }
+//     }
+
+//     $error = true;
+// }
+
+
 ?>
 
 <!DOCTYPE html>

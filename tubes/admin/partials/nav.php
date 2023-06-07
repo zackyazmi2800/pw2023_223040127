@@ -6,19 +6,25 @@
     </button>
     <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
       <div class="offcanvas-header">
-        <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Dark offcanvas</h5>
+        <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Admin</h5>
         <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
       </div>
       <div class="offcanvas-body">
         <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
           <li class="nav-item">
+            <a class="nav-link <?=cekAktive('dashboard.php');?>" aria-current="page" href="dashboard.php">Dashboard</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link <?=cekAktive('index_admin.php');?>" aria-current="page" href="index_admin.php">Tabel Admin</a>
+          </li>
+          <li class="nav-item">
             <a class="nav-link <?=cekAktive('index.php');?>" aria-current="page" href="index.php">Galery Box</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link <?=cekAktive('admin_tentang.php');?>" href="admin_tentang.php">tentang</a>
+            <a class="nav-link <?=cekAktive('index_berita.php');?>" aria-current="page" href="index_berita.php">Berita</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link <?=cekAktive('admin_pengaduan.php');?>" href="admin_pengaduan.php">Pengaduan</a>
+            <a class="nav-link <?=cekAktive('index_pengaduan.php');?>" href="index_pengaduan.php">Pengaduan</a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -29,11 +35,11 @@
               <li>
                 <hr class="dropdown-divider">
               </li>
-              <li><a class="dropdown-item" href="#">Berita</a></li>
+              <li><a class="dropdown-item <?=cekAktive('tambah_berita.php');?>" href="tambah_berita.php">Berita</a></li>
               <li>
                 <hr class="dropdown-divider">
               </li>
-              <li><a class="dropdown-item" href="#">Leader</a></li>
+              <li><a class="dropdown-item <?=cekAktive('tambah_admin.php');?>" href="tambah_admin.php">User/Admin</a></li>
             </ul>
           </li>
         </ul>

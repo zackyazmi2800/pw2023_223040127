@@ -131,6 +131,19 @@
     box-sizing: border-box;
     padding: 20px 15px;
   }  
+
+  .content-admin {
+    width: 1250px;
+    max-width: 100%;
+    min-height: 500px;
+    background-color: #fff;
+    border: 1px solid #bbb;
+    border-radius: 5px;
+    margin: auto;
+    margin-top: 80px;
+    box-sizing: border-box;
+    padding: 20px 15px;
+  }
   
 
 

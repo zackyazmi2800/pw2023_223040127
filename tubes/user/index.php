@@ -1,12 +1,16 @@
 <?php
 session_start();
-
 if (!isset($_SESSION["login"])) {
-    header("Location: ../index.php");
-    exit;
+  header("Location: ../index.php");
+  exit;
 }
+$id = $_SESSION['id'];
+$username = $_SESSION['username'];
+$email = $_SESSION['email'];
+
 require '../functions.php';
 $images = query("SELECT * FROM galery");
+$berita = query("SELECT * FROM berita");
 ?>
 <!DOCTYPE html>
 <html>
@@ -81,22 +85,18 @@ $images = query("SELECT * FROM galery");
   <!-- Berita -->
   <div class="container">
     <h1 class="judulberita">Berita Wakanda</h1>
-    <div class="d-flex position-relative bg-body-secondary">
-      <img src="../img/logo.webp" class="flex-shrink-0 me-3" alt="" width="200px" height="250px">
+    <?php $j=1 ?>
+    <?php foreach ($berita as $b) : ?>
+    <div class="d-flex position-relative <?php echo $j % 2 == 0 ? 'bg-body-secondary' : ''; ?>">
+      <img src="../img/berita/<?= $b['img'] ?>" class="flex-shrink-0 me-3" alt="" width="200px" height="250px">
       <div>
-        <h5 class="mt-0">Custom component with stretched link</h5>
-        <p>This is some placeholder content for the custom component. It is intended to mimic what some real-world content would look like, and we're using it here to give the component a bit of body and size.</p>
+        <h5 class="mt-0"><?= $b['title_berita'] ?></h5>
+        <p><?= $b['isi_berita'] ?></p>
         <a href="#" class="stretched-link">Go somewhere</a>
       </div>
     </div>
-    <div class="d-flex position-relative">
-      <img src="../img/leader.jpeg" class="flex-shrink-0 me-3" alt="" width="200px" height="250px">
-      <div>
-        <h5 class="mt-0">Custom component with stretched link</h5>
-        <p>This is some placeholder content for the custom component. It is intended to mimic what some real-world content would look like, and we're using it here to give the component a bit of body and size.</p>
-        <a href="#" class="stretched-link">Go somewhere</a>
-      </div>
-    </div>
+    <?php $j++ ?>
+    <?php endforeach?>
   </div>
 
 

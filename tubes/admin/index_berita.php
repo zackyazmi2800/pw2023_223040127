@@ -1,16 +1,15 @@
 <?php
 session_start();
-
 if (!isset($_SESSION["login2"])) {
     header("Location: ../index.php");
     exit;
 }
 
 require '../functions.php';
-$images = query("SELECT * FROM galery");
+$berita = query("SELECT * FROM berita");
 //cari ketika tombol di tekan
 if (isset($_POST["cari"])) {
-    $images = cari_galery($_POST["keyword"]);
+    $berita = cari_berita($_POST["keyword"]);
 }
 ?>
 <!DOCTYPE html>
@@ -21,12 +20,12 @@ if (isset($_POST["cari"])) {
 
       <!-- Admin Galery Box -->
       <div class="content">
-          <h1>Galery box</h1>
+          <h1>Berita Wakanda</h1>
           
           <form action="" method="post">
-              <input type="text" name="keyword" size="50" autofocus placeholder="masukan pencarian.." autocomplete="off" id="keyword_galery">
-              <button type="submit" name="cari" id="tombol-cari_galery" class="btn btn-primary ms-2 px-5">Cari!</button>
-              <a href="tambah_galery.php" class="btn btn-danger ms-2 px-5">Tambah Data</a>
+              <input type="text" name="keyword" size="50" autofocus placeholder="masukan pencarian.." autocomplete="off" id="keyword">
+              <button type="submit" name="cari" id="tombol-cari" class="btn btn-primary ms-2 px-5">Cari!</button>
+              <a href="tambah_berita.php" class="btn btn-danger ms-2 px-5">Tambah Data</a>
               
             </form>
             <div id="container">
@@ -35,23 +34,23 @@ if (isset($_POST["cari"])) {
                     <tr>
                         <th>No</th>
                         <th class="aksi">Ubah/Hapus</th>
-                        <th>Foto</th>
-                        <th>Nama file</th>
-                        <th>Judul Foto</th>
+                        <th>Foto Berita</th>
+                        <th>Judul Berita</th>
+                        <th>Isi Berita</th>
                     </tr>
                 </thead>
                 <tbody>
                 <?php $i = 1; ?>
-                <?php foreach ($images as $image) : ?>
+                <?php foreach ($berita as $b) : ?>
                     <tr>
                         <td><?= $i; ?></td>
                         <td class="aksi">
-                            <a href="ubah_galery.php?id_gambar=<?= $image["id_gambar"];?>">ubah</a> |
-                            <a href="hapus_galery.php?id_gambar=<?= $image["id_gambar"];?>">hapus</a>
+                            <a href="ubah_berita.php?id_berita=<?= $b["id_berita"];?>">ubah</a> |
+                            <a href="hapus_berita.php?id_berita=<?= $b["id_berita"];?>">hapus</a>
                         </td>
-                        <td><img src="../img/galery/<?= $image["gambar"] ?>" width="200px" alt=""></td>
-                        <td><?= $image["gambar"] ?></td>
-                        <td><?= $image["judul"]?></td>
+                        <td><img src="../img/berita/<?= $b["img"] ?>" width="200px" alt=""></td>
+                        <td><?= $b["title_berita"] ?></td>
+                        <td><?= $b["isi_berita"]?></td>
                     </tr>
                     <?php $i++ ?>
                     <?php endforeach?>

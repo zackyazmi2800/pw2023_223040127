@@ -11,7 +11,7 @@ require '../functions.php';
 // ambil data di URL
 $id_gambar = $_GET["id_gambar"];
 
-// query data galery berdasarkan id
+// query data id gambar berdasarkan id
 $id_gambar = query("SELECT * FROM galery WHERE id_gambar = $id_gambar")[0];
 
 
@@ -37,7 +37,7 @@ if (isset($_POST["submit"])) {
 <?php require ('partials/nav.php');?>
 
         <div class="content" id="container">
-                <h1>Tambah Galery box</h1>
+                <h1>Ubah Galery box</h1>
                 
                 <form action="" method="post" enctype="multipart/form-data" class="box-input">
                 <input type="hidden" name="id_gambar" value="<?= $id_gambar["id_gambar"] ?>">
