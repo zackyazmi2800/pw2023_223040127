@@ -250,3 +250,19 @@ form .form-act {
 	text-align: right;
 	padding-top: 30px
 }
+
+.pdf{
+  font-size: 70px;
+}
+
+
+@media print {
+  h1{
+    font-size: 50px;
+    text-align: center;
+  }
+
+  .aksi {
+    display: none;
+  }  
+}

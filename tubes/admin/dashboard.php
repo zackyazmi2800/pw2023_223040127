@@ -39,7 +39,7 @@ $berita = mysqli_num_rows($berita);
                         <i class="fa-solid fa-users-gear fa-2xl float-end" style="color: #f5f5f5;"></i>
                         <h5 class="card-title"><?= $user; ?> User & Admin</h5>
                         <div class="card-footer">
-                        <a href="index_admin.php" class="link-light link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Tamabah Galery Box</a>
+                        <a href="index_admin.php" class="link-light link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Tambah Galery Box</a>
                         </div>
                     </div>
                 </div>
@@ -48,11 +48,11 @@ $berita = mysqli_num_rows($berita);
                 <div class="card text-bg-primary mb-3" style="max-width: 18rem;">
                         <div class="card-header">Galery box</div>
                     <div class="card-body">
-                        <p class="card-text"> untuk menambahkan gambar untuk galery box user</p>
+                        <p class="card-text">Untuk menambahkan gambar untuk galery box user</p>
                         <i class="fa-solid fa-images fa-2xl float-end" style="color: #e4290c;"></i>
                         <h5 class="card-title"><?= $images ?> Gambar</h5>
                         <div class="card-footer">
-                            <a href="index.php" class="link-light link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Tamabah Galery Box</a>
+                            <a href="index.php" class="link-light link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Tambah Galery Box</a>
                         </div>
                     </div>
                 </div>
@@ -61,11 +61,11 @@ $berita = mysqli_num_rows($berita);
                 <div class="card text-bg-light mb-3" style="max-width: 18rem;">
                         <div class="card-header">Berita</div>
                     <div class="card-body">
-                        <p class="card-text">untuk menambahkan berita pada halaman user</p>
+                        <p class="card-text">Untuk menambahkan berita pada halaman user</p>
                         <i class="fa-solid fa-newspaper fa-2xl float-end" style="color: #202327;"></i>
                         <h5 class="card-title"><?= $berita; ?> Berita</h5>
                         <div class="card-footer">
-                            <a href="index_berita.php" class="link-dark link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Tamabah Berita</a>
+                            <a href="index_berita.php" class="link-dark link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Tambah Berita</a>
                         </div>
                     </div>
                 </div>
@@ -77,7 +77,9 @@ $berita = mysqli_num_rows($berita);
                         <p class="card-text">Menampilkan data laporan dari penduduk Wakanda</p>
                         <i class="fa-solid fa-envelope fa-2xl float-end" style="color: #e60505;"></i>
                         <h5 class="card-title"><?= $pengaduan; ?> Pengaduan</h5>
-                        <div class="card-footer">Header</div>
+                        <div class="card-footer">
+                        <a href="index_berita.php" class="link-light link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Lihat Pengaduan</a>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -38,10 +38,10 @@ $berita = query("SELECT * FROM berita");
             <i class="fa-solid fa-xmark fa-beat fa-2xl" style="color: #ffffff;" id="closenav"></i>
           </label>
           <ul>
-            <li><a href="#">Beranda</a></li>
-            <li><a href="tentang.php">Tentang</a></li>
-            <li><a href="pengaduan.php">Pengaduan</a></li>
-            <li><a href="keluar.php">Keluar</a></li>
+            <li><a href="#" class="link-underline link-underline-opacity-0">Beranda</a></li>
+            <li><a href="tentang.php" class="link-underline link-underline-opacity-0">Tentang</a></li>
+            <li><a href="pengaduan.php" class="link-underline link-underline-opacity-0">Pengaduan</a></li>
+            <li><a href="keluar.php" class="link-underline link-underline-opacity-0">Keluar</a></li>
           </ul>
         </div>
       </div>

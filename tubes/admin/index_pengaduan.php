@@ -27,6 +27,7 @@ if (isset($_POST["cari"])) {
             <form action="" method="post">
                 <input type="text" size="45" name="keyword_pengaduan" id="keyword_pengaduan" autofocus placeholder="masukan keyword pencarian.." autocomplete="off">
                 <button type="submit" name="cari" id="tombol-cari_pengaduan" class="btn-sec">Cari!</button>
+                <a href="../pdf/cetak_laporan.php" target="_blank" class="btn btn-dark ms-2 px-5">Cetak Laporan</a>
             </form>
             <div id="container">
 
