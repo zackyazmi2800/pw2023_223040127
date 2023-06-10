@@ -53,7 +53,7 @@ $berita = query("SELECT * FROM berita");
         <h1>KOTA WAKANDA</h1>
         <h1>WAKANDA FOREVER</h1>
         <p>Kota yang sangat damai dan aman</p>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat quia voluptatibus cupiditate? Corporis, veniam ea in quaerat cumque reprehenderit libero veritatis deleniti! Tenetur mollitia eligendi ducimus aliquid ea dolorem qui.</p>
+        <p>Wakanda (/wəˈkændə, -ˈkɑːn-/) adalah sebuah negara fiksi yang terletak di Afrika Sub-Sahara yang dibuat oleh Marvel Comics.[1] Negara tersebut adalah kampung halaman dari pahlawan super Black Panther. Wakanda pertama kali muncul dalam Fantastic Four #52 (Juli 1966), dan dibuat oleh Stan Lee dan Jack Kirby.[2]</p>
       </div>
     </div>
 
