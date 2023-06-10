@@ -7,11 +7,27 @@ if (!isset($_SESSION["login2"])) {
 }
 
 require '../functions.php';
-$images = query("SELECT * FROM galery");
+// $images = query("SELECT * FROM galery");
 //cari ketika tombol di tekan
 if (isset($_POST["cari"])) {
     $images = cari_galery($_POST["keyword"]);
 }
+
+// Tentukan pengurutan default
+$sort = isset($_GET['sort']) ? $_GET['sort'] : 'asc';
+
+// Tentukan kolom pengurutan default
+$orderBy = isset($_GET['orderBy']) ? $_GET['orderBy'] : 'judul';
+
+// Modifikasi query SQL berdasarkan pengurutan dan kolom yang dipilih
+$images = query("SELECT * FROM galery ORDER BY $orderBy $sort");
+
+// Fungsi untuk mengubah pengurutan
+function flipSort($sort)
+{
+    return $sort == 'asc' ? 'desc' : 'asc';
+}
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -32,13 +48,24 @@ if (isset($_POST["cari"])) {
             <div id="container">
             <table class="tb">
                 <thead>
-                    <tr>
-                        <th>No</th>
-                        <th class="aksi">Ubah/Hapus</th>
-                        <th>Foto</th>
-                        <th>Nama file</th>
-                        <th>Judul Foto</th>
-                    </tr>
+                <tr>
+                    <th>No</th>
+                    <th class="aksi">Ubah/Hapus</th>
+                    <th>Foto</th>
+                    <th>Nama file</th>
+                    <th>
+                        <a href="?orderBy=judul&sort=<?= $orderBy == 'judul' ? flipSort($sort) : 'asc'; ?>">
+                            Judul Foto
+                            <?php if ($orderBy == 'judul') : ?>
+                                <?php if ($sort == 'asc') : ?>
+                                    <i class="fa fa-sort-asc"></i>
+                                <?php else : ?>
+                                    <i class="fa fa-sort-desc"></i>
+                                <?php endif; ?>
+                            <?php endif; ?>
+                        </a>
+                    </th>
+                </tr>
                 </thead>
                 <tbody>
                 <?php $i = 1; ?>
