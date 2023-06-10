@@ -20,7 +20,7 @@ if (isset($_POST["cari"])) {
 
       <!-- Admin Galery Box -->
       <div class="content-admin">
-          <h1>Berita Wakanda</h1>
+          <h1>User & Admin</h1>
           
           <form action="" method="post">
               <input type="text" name="keyword" size="50" autofocus placeholder="masukan pencarian.." autocomplete="off" id="keyword_admin">

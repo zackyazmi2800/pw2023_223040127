@@ -37,7 +37,7 @@ if (isset($_POST["submit"])) {
 <?php require ('partials/nav.php');?>
 
         <div class="content" id="container">
-                <h1>Ubah admin</h1>
+                <h1>Ubah Data</h1>
                 
                 <form action="" method="post" enctype="multipart/form-data" class="box-input">
                     

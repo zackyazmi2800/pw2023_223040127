@@ -33,7 +33,7 @@ if (isset($_POST["submit"])) {
 <?php require ('partials/nav.php');?>
 
         <div class="content" id="container">
-                <h1>Tambah Galery box</h1>
+                <h1>Tambah Berita</h1>
                 
                 <form action="" method="post" enctype="multipart/form-data" class="box-input">
                     <div class="mb-3">

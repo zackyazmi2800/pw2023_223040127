@@ -41,16 +41,17 @@ if (isset($_POST["submit"])) {
                 
                 <form action="" method="post" enctype="multipart/form-data" class="box-input">
                 <input type="hidden" name="id_gambar" value="<?= $id_gambar["id_gambar"] ?>">
+                <input type="hidden" name="gambar_lama" value="<?= $id_gambar["gambar"] ?>">
                     <div class="mb-3">
                        <label for="gambar" class="form-label">Masukan foto</label>
-                        <input class="form-control" type="file" id="gambar" name="gambar" value="<?= $id_gambar["gambar"]?>">
+                        <input class="form-control" type="file" id="gambar" name="gambar">
                     </div>
                     <div class="mb-3">
                        <label for="judul" class="form-label">Masukan judul foto</label>
                         <input class="form-control" type="text" id="gambar" name="judul" value="<?= $id_gambar["judul"]?>">
                     </div>
                     <div class="button">
-				        <button type="submit" name="submit" class="btn btn-primary">Ubah Data</button>
+				        <button type="submit" name="submit" class="btn btn-primary">Ubah galery</button>
 			        </div>
                     
                 </form>

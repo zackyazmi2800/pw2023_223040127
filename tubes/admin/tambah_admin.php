@@ -23,7 +23,7 @@ if (isset($_POST["register"])) {
 <?php require ('partials/nav.php');?>
 
         <div class="content" id="container">
-                <h1>Tambah Galery box</h1>
+                <h1>Tambah User</h1>
                 
                 <form action="" method="post" enctype="multipart/form-data" class="box-input">
                     <div class="mb-3">

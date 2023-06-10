@@ -42,9 +42,10 @@ if (isset($_POST["submit"])) {
                 <form action="" method="post" enctype="multipart/form-data" class="box-input">
                     
                 <input type="hidden" name="id_berita" value="<?= $id_berita["id_berita"] ?>">
+                <input type="hidden" name="gambar_lama" value="<?= $id_berita["img"] ?>">
                     <div class="mb-3">
                        <label for="img" class="form-label">Masukan foto</label>
-                        <input class="form-control" type="file" id="img" name="img" value="<?= $id_berita["img"] ?>">
+                        <input class="form-control" type="file" id="img" name="img">
                     </div>
                     <div class="mb-3">
                        <label for="title_berita" class="form-label">Masukan judul berita</label>
@@ -55,7 +56,7 @@ if (isset($_POST["submit"])) {
                         <textarea class="form-control" id="isi_berita" name="isi_berita" rows="3" value="<?= $id_berita["isi_berita"] ?>"></textarea>
                     </div>
                     <div class="button">
-				        <button type="submit" name="submit" class="btn btn-primary">Ubah Data</button>
+				        <button type="submit" name="submit" class="btn btn-primary">Ubah Berita</button>
 			        </div>
                     
                 </form>

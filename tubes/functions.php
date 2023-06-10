@@ -71,6 +71,7 @@ function ubah_admin($data)
 				id = '$id', 
 				username = '$username',
 				nama = '$nama',
+				email = '$email',
 				`password` = '$password',
 				`level` = '$level'
 			WHERE id = $id
@@ -104,7 +105,7 @@ function tambah_galery($data)
 {
 	global $conn;
 
-	$judul = htmlspecialchars($data["judul"]);
+	$judul = htmlspecialchars(strtoupper($data["judul"]));
 	$gambar = upload();
 	if (!$gambar){
 		return false;
@@ -152,9 +153,14 @@ function upload()
 		return false;
 	}
 
+
+	$namaFileBaru = uniqid();
+	$namaFileBaru .= '.';
+	$namaFileBaru .= $ekstensiGambar;
+
 	// memindahkan file
-	move_uploaded_file ($tmpName, '../img/galery/' . $nameFile);
-	return $nameFile;
+	move_uploaded_file ($tmpName, '../img/galery/' . $namaFileBaru);
+	return $namaFileBaru;
 
 
 }
@@ -171,10 +177,12 @@ function ubah_galery($data)
 	global $conn;
 
 	$id_gambar = htmlspecialchars($data["id_gambar"]);
-	$judul = htmlspecialchars($data["judul"]);
-	$gambar = upload();
-	if (!$gambar){
-		return false;
+	$judul = htmlspecialchars(strtoupper($data["judul"]));
+	$gambar_lama = $data["gambar_lama"];
+	if($_FILES ['gambar']['error'] === 4){
+		$gambar = $gambar_lama;
+	} else {
+		$gambar = upload();
 	}
 
 	$query = "UPDATE galery SET
@@ -211,7 +219,7 @@ function tambah_berita($data)
 	if (!$img){
 		return false;
 	}
-	$title_berita = htmlspecialchars($data["title_berita"]);
+	$title_berita = htmlspecialchars(strtoupper($data["title_berita"]));
 	$isi_berita = htmlspecialchars($data["isi_berita"]);
 
 	$query = "INSERT INTO berita
@@ -256,9 +264,13 @@ function upload_berita()
 		return false;
 	}
 
+	$namaFileBaru = uniqid();
+	$namaFileBaru .= '.';
+	$namaFileBaru .= $ekstensiGambar;
+
 	// memindahkan file
-	move_uploaded_file ($tmpName, '../img/berita/' . $nameFile);
-	return $nameFile;
+	move_uploaded_file ($tmpName, '../img/berita/' . $namaFileBaru);
+	return $namaFileBaru;
 
 
 }
@@ -275,11 +287,13 @@ function ubah_berita($data)
 	global $conn;
 
 	$id_berita = htmlspecialchars($data["id_berita"]);
-	$img = upload_berita();
-	if (!$img){
-		return false;
+	$gambar_lama = $data["gambar_lama"];
+	if($_FILES ['img']['error'] === 4){
+		$img = $gambar_lama;
+	} else {
+		$img = upload_berita();
 	}
-	$title_berita = htmlspecialchars($data["title_berita"]);
+	$title_berita = htmlspecialchars(strtoupper($data["title_berita"]));
 	$isi_berita = htmlspecialchars($data["isi_berita"]);
 
 	$query = "UPDATE berita SET
@@ -287,7 +301,7 @@ function ubah_berita($data)
 				img = '$img',
 				title_berita = '$title_berita',
 				isi_berita = '$isi_berita'
-			WHERE id_gambar = $id_gambar
+			WHERE id_berita = $id_berita
 			";
 	mysqli_query($conn, $query);
 
