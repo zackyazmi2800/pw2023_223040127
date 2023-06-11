@@ -11,6 +11,21 @@ $admins = query("SELECT * FROM user_admin");
 if (isset($_POST["cari"])) {
     $admins = cari_admin($_POST["keyword"]);
 }
+
+// Tentukan pengurutan default
+$sort = isset($_GET['sort']) ? $_GET['sort'] : 'asc';
+
+// Tentukan kolom pengurutan default
+$orderBy = isset($_GET['orderBy']) ? $_GET['orderBy'] : 'level';
+
+// Modifikasi query SQL berdasarkan pengurutan dan kolom yang dipilih
+$admins = query("SELECT * FROM user_admin ORDER BY $orderBy $sort");
+
+// Fungsi untuk mengubah pengurutan
+function flipSort($sort)
+{
+    return $sort == 'asc' ? 'desc' : 'asc';
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -39,7 +54,18 @@ if (isset($_POST["cari"])) {
                         <th>Nama</th>
                         <th>Email</th>
                         <th>Password</th>
-                        <th>Tugas</th>
+                        <th>
+                        <a href="?orderBy=level&sort=<?= $orderBy == 'level' ? flipSort($sort) : 'asc'; ?>">
+                            Level
+                            <?php if ($orderBy == 'level') : ?>
+                                <?php if ($sort == 'asc') : ?>
+                                    <i class="fa fa-sort-asc"></i>
+                                <?php else : ?>
+                                    <i class="fa fa-sort-desc"></i>
+                                <?php endif; ?>
+                            <?php endif; ?>
+                        </a>
+                    </th>
                     </tr>
                 </thead>
                 <tbody>
